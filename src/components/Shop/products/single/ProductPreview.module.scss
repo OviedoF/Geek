@@ -1,0 +1,40 @@
+.preview{
+    width: 62%;
+
+    .details{
+        background-color: var(--card-bg);
+        border-radius: var(--border-radius);
+
+        .slider{
+            height: 400px;
+            .aws_btn {
+                --slider-height-percentage: 57%;
+                --slider-transition-duration: 308ms;
+                --organic-arrow-thickness: 6px;
+                --organic-arrow-border-radius: var(--border-radius);
+                --organic-arrow-height: 35px;
+                --organic-arrow-color: var(--color-primary);
+                --control-button-width: 8%;
+                --control-button-height: 25%;
+                --control-button-background: transparent;
+                --control-bullet-color: #FFFFFF50;
+                --control-bullet-active-color: var(--color-primary);
+                --loader-bar-color: var(--color-primary);
+                --loader-bar-height: 6px;
+            }
+
+            img, div{
+                object-fit: contain !important;
+                border-top-left-radius: var(--border-radius);
+                border-top-right-radius: var(--border-radius);
+            }
+        }
+
+        p{
+            padding: 20px;
+            margin-top: 80px;
+        }
+
+        
+    }
+}

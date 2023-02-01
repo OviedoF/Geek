@@ -1,0 +1,23 @@
+.button{
+    position: relative;
+
+    .oneMore{
+        position: absolute;
+        left: 45%;
+        top: 100%;
+        opacity: 0;
+        animation: appear .8s ease;
+        color: var(--color-primary);
+    }
+}
+
+@keyframes appear{
+    0%{
+        top: 100%;
+        opacity: 1;
+    }
+    100%{
+        top: 150%;
+        opacity: 0;
+    }
+}

@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito+Sans:wght@200&display=swap');
+
+:root{
+  --color-bg: #001744;
+  --card-bg: #242424;
+  --transparency-color: #FFFFFF40;
+  --color-font-nav: #FFFFFF;
+  --color-font-body: #c1c1c1;
+  --color-font-body-secondary: #999999; 
+  --color-primary: #001744;
+  --font: "Nunito Sans", sans-serif;
+  --titles-font: "Montserrat", sans-serif;
+  --border-radius: 20px;
+  --separation-top: 50px;
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: var(--titles-font);
+}
+
+*{
+  
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #001744;
+  color:rgba(255, 255, 255, 1);
+
+  &::-webkit-scrollbar {
+    background-color: var(--card-bg);
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-scrollbar:vertical {
+      width:5px;
+  }
+
+  &::-webkit-scrollbar-button:increment,&::-webkit-scrollbar-button {
+      display: none;
+  } 
+
+  &::-webkit-scrollbar:horizontal {
+      height: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: #FFFFFF30;
+      border-radius: 50px;
+  }
+}
+
+form{
+
+  .form_error{
+    color: var(--color-danger);
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .form_success{
+    color: var(--color-success);
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .form_group{
+    margin-bottom: 20px;
+
+    label{
+      display: block;
+      margin-bottom: 5px;
+      color: var(--color-font-body);
+    }
+
+    input{
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background-color: transparent;
+      color: var(--color-font-body);
+      font-family: var(--font);
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: all 0.3s ease-in-out;
+      border-bottom: 1px solid var(--transparency-color);
+      
+      &::placeholder{
+        color: var(--color-font-body-secondary);
+      }
+
+      &:focus{
+        outline: none;
+      }
+    }
+
+    button[type="submit"]{
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background-color: var(--color-primary);
+      color: var(--color-font-nav);
+      font-family: var(--font);
+      font-size: 16px;
+      box-sizing: border-box;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: all 0.3s ease-in-out;
+
+      &:hover{
+        background-color: #7a4f9e;
+      }
+    }
+  }
+
+}
+
+#root{
+  display: flex;
+}
+
+main{
+  width: 100%;
+  padding: 20px;
+  padding-left: 20%;
+  box-sizing: border-box;
+}
+
+.btn{
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: var(--card-bg);
+  color: var(--color-font-nav);
+  font-family: var(--font);
+  font-size: 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover{
+    background-color: #7a4f9e;
+  }
+}

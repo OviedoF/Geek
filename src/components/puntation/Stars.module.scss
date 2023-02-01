@@ -1,0 +1,26 @@
+.container{
+    width: 100%;
+    padding: 0 20px;
+    margin: 15px 0;
+    position: relative;
+
+    span{
+        position: absolute;
+        font-size: 11px;
+        color: #FFFFFF60;
+    }
+
+    .star{
+        color: var(--color-primary);
+    }
+
+    .star_gold{
+        color: #ffd700;
+    }
+    
+    .no_color{
+        color: #FFFFFF20;
+    }
+
+    
+}

@@ -1,0 +1,32 @@
+.product_card {
+    text-decoration: none;
+    width: 46%;
+    display: flex;
+    background-color: var(--card-bg);
+    padding: 20px;
+    margin: 0 10px;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    position: relative;
+    height: 152px;
+
+    img {
+      left: 0;
+      top: 0;
+      height: 100%;
+      border-bottom-left-radius: var(--border-radius);
+      border-top-left-radius: var(--border-radius);
+      position: absolute;
+      object-fit: cover;
+      width: 35%;
+    }
+
+    .details {
+      margin-left: 40%;
+      color: #ffffff90;
+
+      h2 {
+        margin-bottom: 20px;
+      }
+    }
+  }

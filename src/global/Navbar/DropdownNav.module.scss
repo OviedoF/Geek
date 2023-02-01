@@ -1,0 +1,75 @@
+.container{
+    margin-top: 40px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: all .5s;
+
+    .activator{
+        position: relative;
+        width: 100%;
+        padding: 13px;
+        box-sizing: border-box;
+        display: flex;
+        border-radius: var(--border-radius);
+        transition: all .5s;
+        cursor: pointer;
+
+        .arrow_icon{
+            transition: all .5s;
+            position: absolute;
+            right: 10px;
+        }
+    
+        .active_icon{
+            transition: all .5s;
+            position: absolute;
+            right: 10px;
+            transform: rotate(90deg);
+        }
+        
+        &[active="on"]{
+            background-color: #FFFFFF20;
+        }
+    }
+
+    .modal{
+        padding-left: 30px;
+        margin-top: 0px;
+        position: absolute;
+        top: 42px;
+        width: 100%;
+        overflow-y: hidden;
+        box-sizing: border-box;
+        animation: modal-appear .5s ease;
+
+        a{
+            height: 40px;
+            width: 100%;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            transition: all .3s;
+
+            &:hover{
+                background-color: #FFFFFF20;
+            }
+        }
+    }
+}
+
+@keyframes modal-appear {
+    0%{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    100%{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}

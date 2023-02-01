@@ -1,0 +1,30 @@
+.info_container{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .heading{
+        width: 100%;
+        display: flex;
+        margin-bottom: 30px;
+        justify-content: space-between;
+
+        h1{
+            font-size: 30px;
+        }
+
+        button{
+            background-color: var(--color-primary);
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            color: white;
+            transition: all .5s;
+            cursor: pointer;
+
+            &:hover{
+                filter: brightness(.8);
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.redirect{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    margin-left: 5px;
+
+    svg{
+        height: 40px;
+        padding: 20px;
+    }
+
+    p{
+        margin-left: 0px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        width: 0;
+        justify-content: center;
+        transition: all .5s;
+        font-size: 0;
+    }
+
+    &:hover{
+        p{  
+            font-size: 20px;
+            transition: all .5s;
+            width: 300px;
+            padding-right: 20px;
+        }
+    }
+}

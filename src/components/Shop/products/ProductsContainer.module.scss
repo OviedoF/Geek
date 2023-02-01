@@ -1,0 +1,28 @@
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  .cards_container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    a{
+      
+    margin-top: 10px;
+    }
+  }
+
+  .add_redirect {
+    color: inherit;
+
+    svg {
+      height: 30px;
+      cursor: pointer;
+      color: var(--color-primary);
+    }
+  }
+}

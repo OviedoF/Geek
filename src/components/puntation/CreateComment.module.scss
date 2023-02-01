@@ -1,0 +1,48 @@
+.write_comment{
+    text-align: center;
+
+    textarea{
+        background: none;
+        border-radius: var(--border-radius);
+        border: 1px solid #FFFFFF30;
+        width: 100%;
+        padding: 20px;
+        height: 220px;
+        box-sizing: border-box;
+        font-size: 18px;
+        color: #FFFFFF99;
+        resize: none;
+        margin: 20px 0;
+    }
+
+    svg{
+        height: 20px;
+        margin: 0 2px;
+    }
+
+    .star_nothover{
+        color: #FFFFFF70;
+        cursor: pointer;
+    }
+
+    .star_active{
+        color: var(--color-primary);
+        cursor: pointer;
+    }
+
+    input[type="submit"]{
+        padding: 10px 30px;
+        margin: 0;
+        font-weight: 100;
+        margin-left: 20px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .calification{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+}

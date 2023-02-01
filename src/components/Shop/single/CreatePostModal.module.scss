@@ -1,0 +1,78 @@
+.post_modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #00000050;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    z-index: 99999;
+    left: 0;
+
+    .create_post{
+        background-color: var(--card-bg);
+        padding: 20px;
+        width: 35%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        border-radius: 20px;
+
+        textarea{
+            width: 100%;
+            height: 200px;
+            font-size: 18px;
+            border-radius: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: var(--card-bg);
+            color: white;
+        }
+
+        label{
+            padding: 10px;
+            font-size: 25px;
+            color: white;
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            transition: all .3s;
+            cursor: pointer;
+
+            .add_icon{
+                height: 25px;
+                margin: 0;
+                margin-right: 5px;
+            }
+
+            &:hover{
+                color: var(--color-primary);
+                
+                .add_icon{
+                    color: var(--color-primary);
+                }
+            }
+        }
+
+        p{
+            color: white;
+            font-size: 25px;
+            width: 100%;
+            padding-left: 12px;
+            margin-top: 20px;
+        }
+
+        input[type="file"]{
+            display: none;
+        }
+
+        input[type="submit"]{
+            width: 100%;
+        }
+    }
+}
+
+@keyframes appear {
+    0%{}
+}

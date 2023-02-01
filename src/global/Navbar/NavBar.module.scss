@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Freehand&display=swap");
+
+.header {
+  background-color: var(--card-bg);
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  height: 100vh;
+  width: 18%;
+  font-family: var(--font);
+  padding: 20px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-weight: 100;
+  align-items: center;
+  z-index: 2;
+  position: fixed;
+  color: var(--color-font-nav);
+
+  h2 {
+    font-size: 30px;
+    font-family: "Freehand", cursive;
+  }
+
+  #wallet {
+    font-size: 12px;
+    color: white;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+
+    span {
+      font-size: 10px;
+      display: flex;
+      align-items: flex-start;
+      color: #ffffff90;
+      margin-left: 5px;
+    }
+  }
+
+  .user_data {
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.5s;
+    border-radius: var(--border-radius);
+    margin: 0 0 0 0;
+    text-align: center;
+
+    p {
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      margin-top: 5px;
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+
+    .icons_actions {
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      svg {
+        display: flex;
+        padding: 5px;
+        width: 10px;
+        border-radius: 50%;
+
+        &:hover {
+          background-color: #ffffff20;
+        }
+      }
+    }
+  }
+
+  ul {
+    width: 100%;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+
+    &::-webkit-scrollbar:vertical {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-button:increment,
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+
+    &::-webkit-scrollbar:horizontal {
+      height: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #c486ee;
+      border-radius: 50px;
+    }
+
+    li {
+      width: 100%;
+      font-size: 16px;
+      box-sizing: border-box;
+      border-radius: 15px;
+      display: flex;
+      user-select: none;
+
+      &.no_modal {
+        padding: 13px;
+
+        &:hover {
+          background-color: #ffffff20;
+          cursor: pointer;
+        }
+      }
+
+      &:not(:first-child) {
+        margin-top: 2px;
+      }
+
+      a {
+        color: inherit;
+        justify-content: flex-start;
+        display: flex;
+
+        svg {
+          margin-right: 10px;
+          width: 20px;
+        }
+      }
+    }
+  }
+
+  a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  button.manageShop {
+    height: 59px;
+    background: #ffffff;
+    border-radius: 50px;
+    width: 70%;
+    font-size: 22px;
+    font-weight: 700;
+    font-style: italic;
+    cursor: pointer;
+  }
+}
