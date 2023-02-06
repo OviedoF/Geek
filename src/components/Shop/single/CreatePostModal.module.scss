@@ -69,6 +69,18 @@
 
         input[type="submit"]{
             width: 100%;
+            background-color: var(--color-bg);
+            color: white;
+            height: 40px;
+            border: none;
+            border-radius: 50px;
+            transition: all .3s;
+            cursor: pointer;
+            
+            &:hover{
+                background-color: var(--card-bg);
+
+            }
         }
     }
 }

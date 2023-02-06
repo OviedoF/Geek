@@ -29,11 +29,11 @@ export default function ShopPage() {
             </div>
 
             <div className={styles.media}>
-                <PostsContainer owner={shop._id === auth.shop} posts={shop.posts}/>
+                <PostsContainer owner={shop._id === auth.shop._id} posts={shop.posts}/>
 
                 <h3 style={{margin: '30px 0'}}>Productos</h3>
 
-                <ProductsContainer products={shop.products} owner={shop._id === auth.shop}/>
+                <ProductsContainer products={shop.products} owner={shop._id === auth.shop._id}/>
 
                 <h3 style={{margin: '30px 0'}}>Comentarios</h3>
 

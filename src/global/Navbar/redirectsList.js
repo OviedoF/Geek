@@ -5,36 +5,32 @@ export default function redirectsList(dataToGet, id, myDuviId) {
     home: routes.home,
     shoppingCart: '/cart',
     user: [
-      ["Perfil", `/user/${id}`],
-      ["Mis seguidos", `/user/${id}/follows`],
-      ["Lista de deseados", `/user/${id}/wishlist`],
-      ["Compras en línea", `/user/${id}/states`],
-      ["Retiros en locales", `/user/${id}/local-purchase`]
+      ["Perfil", routes.user],
+      ["Mis seguidos", routes.follows],
+      ["Lista de deseados", routes.wishlist],
     ],
     products: [
       // ["Destacados", `/products/featured`],
-      ["Descubrir", `/products`],
+      ["Descubrir", routes.products],
     ],
     duvis: [
-      ["Descubrir", `/duvis`],
+      ["Descubrir", routes.viewShops],
       // ["Tiendas del mes", `/duvis/featured`]
     ],
     myDuvi: [
-      ["Administrar", `${routes.shop}`],
-      ["Publicar producto", `/products/add`],
+      ["Administrar", routes.shop],
+      ["Publicar producto", routes.createProduct],
       // ["Estadísticas", "${routes.shop}/stadistics"],
-      ["Ventas a distancia", `${routes.shop}/states`],
-      ["Ventas en el local", `${routes.shop}/local-purchase`]
     ],
     shopCreate: routes.requestShop,
     favs: [
-      ["Productos favoritos", `/user/${id}/favorites/products`],
-      ["Tiendas a las que sigo", `/user/${id}/favorites/duvis`],
+      ["Productos favoritos", routes.productsFavs],
+      ["Tiendas a las que sigo", routes.shopsFavs],
     ],
     admin: [
-      ["Crear categoría", "/admin/category/add"],
-      ["Crear subcategoría", "/admin/category/subcategory/add"],
-      ["Mensajes y consultas", "/admin/questions"]
+      ["Crear categoría", routes.createCategory],
+      ["Crear subcategoría", routes.createSubcategory],
+      ["Mensajes y consultas", routes.messages]
     ],
   };
 

@@ -1,0 +1,25 @@
+.buttons_state{
+    display: flex;
+    justify-content: space-between;
+
+    button{
+        width: 20.33334%;
+        background: none;
+        margin-bottom: 20px;
+        padding: 15px 0;
+        font-size: 19px;
+        border: none;
+        color: #FFFFFF60;
+        border-bottom: 1px solid #FFFFFF60;
+        transition: color .2s;
+
+        &:hover{
+            cursor: pointer;
+            color: #FFFFFF99;
+        }
+    }
+}
+
+.historial_list{
+    margin: 10px 0; 
+}

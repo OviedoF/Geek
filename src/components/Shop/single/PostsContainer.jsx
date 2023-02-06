@@ -19,6 +19,7 @@ export default function PostsContainer({posts, owner}) {
           <PostCard post={el} key={el._id}/>
         ))}
       </ol>
+      
       {owner && <FontAwesomeIcon className={styles.add_icon} icon={faPlus} onClick={() => setIsModalActive(true)}/> }
     </section>
   )

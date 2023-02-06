@@ -33,6 +33,10 @@ const Navbar = () => {
         navigate(routes.auth);
     };
 
+    useEffect(() => {
+        setIsAdmin(auth.roles.includes('admin'))
+    }, []);
+
     return (
         <>
             <header className={styles.header}>

@@ -1,23 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600&family=Prompt:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root{
-  --color-bg: #001744;
-  --card-bg: #242424;
+  --color-bg: #00021E;
+  --card-bg: #472183;
+  --color-hover: #2b1145;
   --transparency-color: #FFFFFF40;
   --color-font-nav: #FFFFFF;
   --color-font-body: #c1c1c1;
   --color-font-body-secondary: #999999; 
-  --color-primary: #001744;
-  --font: "Nunito Sans", sans-serif;
-  --titles-font: "Montserrat", sans-serif;
+  --color-primary: #4B56D2;
+  --font: "Prompt", sans-serif;
+  --titles-font: "Kanit", sans-serif;
   --border-radius: 20px;
   --separation-top: 50px;
   --color-success: #28a745;
   --color-danger: #dc3545;
+  --text-color: #FEFEFE;
 }
 
 h1, h2, h3, h4, h5, h6{
   font-family: var(--titles-font);
+  font-weight: 300;
 }
 
 *{
@@ -29,8 +32,9 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #001744;
+  background-color: var(--color-bg);
   color:rgba(255, 255, 255, 1);
+  font-family: var(--font);
 
   &::-webkit-scrollbar {
     background-color: var(--card-bg);
@@ -131,6 +135,15 @@ main{
   padding: 20px;
   padding-left: 20%;
   box-sizing: border-box;
+  background-color: #00021E;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%230D0F1E'/%3E%3Cstop offset='1' stop-color='%2300021E'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%234E0074' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%234E0074' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+
+  &#not_padding{
+    padding: 0;
+  }
 }
 
 .btn{
@@ -148,4 +161,31 @@ main{
   &:hover{
     background-color: #7a4f9e;
   }
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.loading_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success_text{
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--color-success);
+  margin: 20px 0;
+}
+
+.error_text{
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--color-danger);
+  margin: 20px 0;
 }

@@ -4,8 +4,6 @@ import styles from "./PostCard.module.scss";
 import AwesomeSliderStyles from 'react-awesome-slider/src/styles';
 
 export default function PostCard({ post }) {
-  const [slide, setSlide] = useState(0);
-
   return (
     <li key={post._id} className={styles.post_card}>
       <p>{post.content}</p>

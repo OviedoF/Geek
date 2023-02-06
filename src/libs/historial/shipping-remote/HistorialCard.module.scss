@@ -1,0 +1,44 @@
+.card{
+    width: 100%;
+    height: 100px;
+    background-color: var(--card-bg);
+    margin-top: 20px;
+    border-radius: var(--border-radius);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-items: center;
+
+    .images_slider{
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        justify-self: left;
+
+        .images_carrousel{
+            width: 100%;
+            height: 100%;
+            display: flex;
+
+            img{
+                position: relative;
+                left: 0;
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+                border-top-left-radius: var(--border-radius);
+                border-bottom-left-radius: var(--border-radius);
+            }
+        }
+    }
+
+
+    a{
+        color: inherit;
+        text-decoration: none;
+    }
+
+    svg{
+        margin: 0 10px;
+    }
+}

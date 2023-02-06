@@ -8,7 +8,7 @@ const AuthPage = () => {
     const [isForgottenPassword, setIsForgottenPassword] = useState(false);
 
     return (
-        <main>
+        <main id="not_padding">
             {isForgottenPassword && <ChangePassword setIsModal={setIsForgottenPassword} />}
             {isRegistering && <RegisterForm setIsRegistering={setIsRegistering} />}
             {!isRegistering && <LoginForm setIsRegistering={setIsRegistering} setIsForgottenPassword={setIsForgottenPassword} /> }
