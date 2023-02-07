@@ -19,6 +19,7 @@ export default {
 
     /* productos */
     products: '/products',
+    product: '/product',
 
     /* administrador */
     createCategory: '/admin/category/create',

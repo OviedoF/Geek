@@ -8,7 +8,7 @@ const RegisterForm = ({setIsRegistering}) => {
     const [userImage, setUserImage] = useState(null);
     const [form, setForm] = useState({});
     const [loading, setLoading] = useState(false);
-    const [success, setSuccess] = useState(true);
+    const [success, setSuccess] = useState(false);
     const [error, setError] = useState(null);
 
     const handleChange = (e) => {

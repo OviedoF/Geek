@@ -46,7 +46,7 @@ const Navbar = () => {
 
                     <div className={styles.icons_actions}>
                     <FontAwesomeIcon icon={faQuestion} />
-                    <Notifications />
+                    {/* <Notifications /> */}
                     </div>
                 </div>
                 {auth.duvi && <Link to={'/mywallet'} id={styles.wallet}>Wallet: ${auth.wallet.onProperty}  <span>${auth.wallet.onWait} </span></Link>}

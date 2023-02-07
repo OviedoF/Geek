@@ -1,41 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import './CategorySelect.scss'
 
-const items = [
-    {
-        icon:"face",
-        copy:'01. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-    },{
-        icon:"pets",
-        copy:'02. Sed do eiusmod tempor incididunt ut labore.'
-    },{
-        icon:"stars",
-        copy:'03. Consectetur adipiscing elit.'
-    },{
-        icon:"invert_colors",
-        copy:'04. Ut enim ad minim veniam, quis nostrud exercitation.'
-    },{
-        icon:"psychology",
-        copy:'05. Llamco nisi ut aliquip ex ea commodo consequat.'
-    },{
-        icon:"brightness_7",
-        copy:'06. Misi ut aliquip ex ea commodo consequat.'
-    }
-];
-
-const Card = (props) => {
+const Card = ({category, eskeleton}) => {
     return (
       <li className="card">
-        <span className="material-icons">{props.icon}</span>
-        <p>{props.copy}</p>
+        <img src={category.imageUrl || 'https://media.tarkett-image.com/large/TH_24567081_24594081_24596081_24601081_24563081_24565081_24588081_001.jpg' } alt="Background card" className='background_card' />
+        <h2>{category.name}</h2>
+        <p>{category.description}</p>
       </li>
     )
   }
 
-const CategorySelect = () => {
+const CardSkeleton = ({category, eskeleton}) => {
+  return (
+    <li className="card">
+      <img src={'https://media.tarkett-image.com/large/TH_24567081_24594081_24596081_24601081_24563081_24565081_24588081_001.jpg' } alt="Background card" className='background_card' />
+    </li>
+  )
+}
+
+const CategorySelect = ({categories}) => {
     const [moveClass, setMoveClass] = useState('');
-    const [carouselItems, setCarouselItems] = useState(items);
-    
+    const [carouselItems, setCarouselItems] = useState(categories);
+
     useEffect(() => {
       document.documentElement.style.setProperty('--num', carouselItems.length);
     }, [carouselItems])
@@ -61,9 +48,23 @@ const CategorySelect = () => {
       setCarouselItems(copy);
     }
     
+    if(!categories) return (
+      <>
+        <h2>Elije entre nuestras categorías</h2>
+    
+        <div className="carouselwrapper module-wrapper">
+            <ul onAnimationEnd={handleAnimationEnd} className={`${moveClass} carousel`}>
+              {[1, 2, 3, 4].map((item, index) => 
+                  <CardSkeleton key={item} />
+              )}
+            </ul>
+        </div>
+    </>
+    )
+
     return (
         <>
-            <h1>Elije entre nuestras categorías</h1>
+            <h2>Elije entre nuestras categorías</h2>
         
             <div className="carouselwrapper module-wrapper">
                 <div className="ui">
@@ -75,9 +76,9 @@ const CategorySelect = () => {
                 </button>
                 </div>
                 <ul onAnimationEnd={handleAnimationEnd} className={`${moveClass} carousel`}>
-                {carouselItems.map((t, index) => 
-                    <Card key={t.copy + index} icon={t.icon} copy={t.copy} />
-                )}
+                  {carouselItems.map((category, index) => 
+                      <Card key={category + index} category={category} />
+                  )}
                 </ul>
             </div>
         </>

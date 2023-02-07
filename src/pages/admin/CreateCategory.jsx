@@ -24,11 +24,18 @@ const CreateCategory = () => {
         formData.append('name', form.name);
         formData.append('description', form.description);
 
-        axios.post(`${env.API_URL}/category`, formData)
-            .then((res) => setStatus({
-                status: 'success',
-                message: 'Categoría creada correctamente.'
-            }))
+        axios.post(`${env.API_URL}/category`, formData, {
+            headers: {
+                userid: auth._id
+            }
+        })
+            .then((res) => {
+                setStatus({
+                    status: 'success',
+                    message: 'Categoría creada correctamente.'
+                })
+                setForm({})
+            })
             .catch((res) => setStatus({
                 status: 'error',
                 message: 'Error al crear su categoría.'

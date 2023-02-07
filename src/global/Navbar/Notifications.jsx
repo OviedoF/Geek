@@ -13,17 +13,17 @@ const Notifications = () => {
     const [userNotis, setUserNotis] = useState([]);
     const [duviNotis, setDuviNotis] = useState([]);
 
-    useEffect(() => {
-        if(auth.duvi){
-            axios.get(`${process.env.REACT_APP_ROOT_API}/api/duvi/${auth.duvi}/notifications`)
-            .then(res => setDuviNotis(res.data))
-            .catch(err => console.log(err))
-        }
+    // useEffect(() => {
+    //     if(auth.duvi){
+    //         axios.get(`${process.env.REACT_APP_ROOT_API}/api/duvi/${auth.duvi}/notifications`)
+    //         .then(res => setDuviNotis(res.data))
+    //         .catch(err => console.log(err))
+    //     }
         
-        axios.get(`${process.env.REACT_APP_ROOT_API}/api/user/${auth._id}/notifications`)
-            .then(res => setUserNotis(res.data))
-            .catch(err => console.log(err))
-    }, [auth.duvi, auth._id]);
+    //     axios.get(`${process.env.REACT_APP_ROOT_API}/api/user/${auth._id}/notifications`)
+    //         .then(res => setUserNotis(res.data))
+    //         .catch(err => console.log(err))
+    // }, [auth.duvi, auth._id]);
 
     useEffect(() => {
         if(auth.duvi){

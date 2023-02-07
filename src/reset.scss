@@ -46,9 +46,13 @@ table {
 	border-spacing: 0;
 }
 
-h1{
+h1, h2{
 	font-family: var(--titles-font);
 	text-align: center;
 	font-size: 30px;
 	margin-bottom: 20px;
+
+	&.separation-top{
+		margin-top: 25px;
+	}
 }

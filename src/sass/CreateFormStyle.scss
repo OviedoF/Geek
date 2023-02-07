@@ -8,15 +8,15 @@
         width: 50%;
         position: relative;
 
-        .background_image{
-            position: absolute;
-            top: 0; 
-            left: 0;
-            object-fit: cover;
-            z-index: 0;
-            width: 100%;
-            height: 100%;
-            opacity: .3;
+        &.required{
+            &::after{
+                content: "*";
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                font-size: 15px;
+                color: var(--color-danger);
+            }
         }
 
         &.full{
@@ -32,13 +32,44 @@
             border: 1px solid #FFFFFF10;
         }
 
+        option{
+            background-color: #000000;
+            padding: 10px;
+            
+        }
+
         textarea{
             padding: 20px;
             height: 300px;
         }
 
-        input[type="file"]{
+        input[type="file"], input[type="checkbox"]{
             display: none;
+        }
+
+        .select-changer{
+            border: 1px solid #FFFFFF10;
+            background-color: #00000050;
+            width: 100%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 60px;
+            user-select: none;
+
+            svg{
+                margin-left: 10px;
+
+                &.success{
+                    color: var(--color-success);
+                }
+
+                &.error{
+                    color: var(--color-danger);
+                }
+            }
         }
 
         .image-picker{
