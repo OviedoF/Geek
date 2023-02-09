@@ -31,10 +31,11 @@
     }
 
     img{
-        width: 150px;
-        border-radius: 50%;
+        width: auto;
+        border-radius: 0%;
         height: 150px;
         top: 0;
+        object-fit: cover;
         left: 0;
     }
 }

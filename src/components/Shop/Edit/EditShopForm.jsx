@@ -92,35 +92,35 @@ const EditShopForm = ({shop}) => {
 
             <div className="form-group">
                 <label htmlFor="name">Nombre de la tienda</label>
-                <input defaultValue={shop.name} type="text" name='name' className="form-control" onChange={(e) => handleChanges(e)} id="name" />
+                <input defaultValue={shop.name || ''} type="text" name='name' className="form-control" onChange={(e) => handleChanges(e)} id="name" />
             </div>
 
             <div className="form-group">
                 <label htmlFor="name">Descripción de la tienda</label>
-                <textarea defaultValue={shop.description} className="form-control" name='description' onChange={(e) => handleChanges(e)} id="name" rows="3"></textarea>
+                <textarea defaultValue={shop.description || ''} className="form-control" name='description' onChange={(e) => handleChanges(e)} id="name" rows="3"></textarea>
             </div>
 
             <div className="form-group">
                 <label htmlFor="city">Ciudad de la tienda</label>
                 <select className="form-control" defaultValue={shop.city} name='city' onChange={(e) => handleChanges(e)} id="city">
-                    <option>{shop.city}</option>
+                    <option>{shop.city || ''}</option>
                     <option>San Salvador</option>
                 </select>
             </div>
 
             <div className="form-group">
                 <label htmlFor="direction">Dirección de la tienda</label>
-                <input type="text" defaultValue={shop.direction} className="form-control" name='direction' onChange={(e) => handleChanges(e)} id="direction" />
+                <input type="text" defaultValue={shop.direction || ''} className="form-control" name='direction' onChange={(e) => handleChanges(e)} id="direction" />
             </div>
 
             <div className="form-group">
                 <label htmlFor="cellPhone">Teléfono de la tienda</label>
-                <input type="text" defaultValue={shop.cellPhone} className="form-control" name='cellPhone' onChange={(e) => handleChanges(e)} id="cellPhone" />
+                <input type="text" defaultValue={shop.cellPhone || ''} className="form-control" name='cellPhone' onChange={(e) => handleChanges(e)} id="cellPhone" />
             </div>
 
             <div className="form-group">
                 <label htmlFor="email">Correo electrónico de la tienda</label>
-                <input type="email" defaultValue={shop.email} className="form-control" name='email' onChange={(e) => handleChanges(e)} id="email" />
+                <input type="email" defaultValue={shop.email || ''} className="form-control" name='email' onChange={(e) => handleChanges(e)} id="email" />
             </div>
 
             <div className="form-group">

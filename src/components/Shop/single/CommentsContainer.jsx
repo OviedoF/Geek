@@ -4,24 +4,24 @@ import CreateComment from "../../puntation/CreateComment";
 import axios from 'axios';
 import CommentStadistics from '../../puntation/CommentStadistics';
 
-export default function CommentsContainer({theUserIsClient, userId, duviId}) {
+export default function CommentsContainer({theUserIsClient, userId, shopId}) {
   const [theUserIsAlreadyComment, setTheUserIsAlreadyComment] = useState(false);
   const [comments, setComments] = useState([]);
   const [error, setError] = useState(false);
 
   const handleChange = () => {
-    axios.get(`${process.env.REACT_APP_ROOT_API}/api/comments/${duviId}`)
+    axios.get(`${process.env.REACT_APP_ROOT_API}/api/comments/${shopId}`)
       .then(res => setComments(res.data))
       .catch(err => console.log(err));
   };
 
   useEffect(() => {
-    if(duviId) {
-      axios.get(`${process.env.REACT_APP_ROOT_API}/api/comments/${duviId}`)
+    if(shopId) {
+      axios.get(`${process.env.REACT_APP_ROOT_API}/api/comments/${shopId}`)
         .then(res => setComments(res.data))
         .catch(err => console.log(err));
     }
-  }, [duviId]);
+  }, [shopId]);
 
   useEffect(() => {
     comments.forEach(el => el.author._id === userId && setTheUserIsAlreadyComment(true));

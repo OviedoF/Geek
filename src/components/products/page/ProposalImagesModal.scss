@@ -1,0 +1,26 @@
+#proposal_images_modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000080;
+    z-index: 2;
+
+    .gallery_container{
+        background-color: var(--card-bg);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    svg{
+        position: absolute;
+        top: 30px;
+        right: 60px;
+        cursor: pointer;
+        height: 40px;
+    }
+}

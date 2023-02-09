@@ -83,7 +83,7 @@ const ProductForm = ({ data, buttonText, action, categories, form, setForm }) =>
             </div>
 
             <div className="form-group full">
-                <textarea name='description' placeholder='Descripción de su producto' defaultValue={data && data.description}/>
+                <textarea name='description' onChange={(e) => handleChanges(e)} placeholder='Descripción de su producto' defaultValue={data && data.description}/>
             </div>
 
             <div className="form-group required" style={{background: `url(${principalImage}) center/cover no-repeat`}}>

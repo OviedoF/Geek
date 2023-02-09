@@ -76,6 +76,10 @@ form{
   .form_group{
     margin-bottom: 20px;
 
+    textarea{
+      color: inherit;
+    }
+
     label{
       display: block;
       margin-bottom: 5px;
@@ -194,4 +198,9 @@ a{
   padding: 20px;
   background-color: var(--color-danger);
   margin: 20px 0;
+}
+
+img.rupia_image{
+  width: 20px;
+  height: 30px;
 }

@@ -28,7 +28,7 @@ const RegisterForm = ({setIsRegistering}) => {
         setLoading(true);
 
         const formData = new FormData();
-        formData.append('userImage', userImage);
+        formData.append('profileImage', userImage);
         formData.append('name', form.name);
         formData.append('username', form.username);
         formData.append('email', form.email);

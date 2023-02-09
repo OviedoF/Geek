@@ -1,25 +1,26 @@
 import React, { useState, useEffect, useRef } from "react";
-import styles from "./DuviPresentation.module.scss";
+import styles from "./ShopPresentation.module.scss";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import env from '../../../env';
 
-const FollowButton = ({ duviId }) => {
+const FollowButton = ({ shopId }) => {
   const [isAlreadyFollow, setIsAlreadyFollow] = useState(false);
   const auth = useSelector((state) => state.auth);
   const button = useRef();
 
   useEffect(() => {
-    auth && setIsAlreadyFollow(auth.follows.includes(duviId));
-  }, [auth, duviId]);
+    auth && setIsAlreadyFollow(auth.follows.includes(shopId));
+  }, [auth, shopId]);
 
   const handleFollow = () => {
-    axios.put(`${process.env.REACT_APP_ROOT_API}/api/user/${auth._id}/follows`, {
-        duviId,
+    axios.put(`${env.API_URL}/user/${auth._id}/follows`, {
+        shopId,
       })
       .then((res) => {
         button.current.style.animation = 'followButtonAppear .6s ease';
         console.log(res.data);
-        setIsAlreadyFollow(res.data.includes(duviId));
+        setIsAlreadyFollow(res.data.includes(shopId));
       })
       .catch((err) => console.log(err));
   };

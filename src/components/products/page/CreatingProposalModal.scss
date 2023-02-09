@@ -1,0 +1,28 @@
+.creating_proposal{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000080;
+    z-index: 2;
+
+    svg{
+        height: 40px;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+    }
+
+    .form_container{
+        background-color: var(--card-bg);
+        padding: 0px 20px 50px;
+        width: 28%;
+        border-radius: 10px;
+    }
+}
+

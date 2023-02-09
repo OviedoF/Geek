@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import ProductsContainer from '../../components/products/ProductsContainer';
+import ProductsContainer from '../../global/ProductsContainer'
+import env from '../../env';
+import { useSelector } from 'react-redux';
 
 const WishListPage = () => {
-    const { id } = useParams();
     const [products, setProducts] = useState([]);
+    const auth = useSelector(state => state.auth);
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_ROOT_API}/api/user/${id}/wishlist`)
+        axios.get(`${env.API_URL}/user/${auth._id}/wishlist`)
             .then(res => setProducts (res.data))
             .catch(err => console.log(err));
     }, []);

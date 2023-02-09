@@ -49,20 +49,13 @@ const Navbar = () => {
                     {/* <Notifications /> */}
                     </div>
                 </div>
-                {auth.duvi && <Link to={'/mywallet'} id={styles.wallet}>Wallet: ${auth.wallet.onProperty}  <span>${auth.wallet.onWait} </span></Link>}
+                {auth.shop && <Link to={'/mywallet'} id={styles.wallet}>Wallet: ${auth.wallet.onProperty}  <span>${auth.wallet.onWait} </span></Link>}
 
                 <ul>
                     <li className={styles.no_modal}>
                     <Link to={redirectsList("home")}>
                         {" "}
                         <FontAwesomeIcon icon={faHome} /> Inicio{" "}
-                    </Link>
-                    </li>
-
-                    <li className={styles.no_modal}>
-                    <Link to={redirectsList("shoppingCart")}>
-                        {" "}
-                        <FontAwesomeIcon icon={faShoppingCart} /> Mi carrito{" "}
                     </Link>
                     </li>
 
@@ -86,12 +79,6 @@ const Navbar = () => {
                         </Link>
                     </li>
                     )}
-
-                    <DropdownNav
-                    icon={faHeart}
-                    text={"Mis favoritos"}
-                    arrayData={redirectsList("favs", auth._id)}
-                    />
 
                     <DropdownNav
                     icon={faShoppingCart}

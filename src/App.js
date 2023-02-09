@@ -5,6 +5,7 @@ import { QueryClientProvider } from 'react-query';
 import { QueryClient } from 'react-query';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import "react-image-gallery/styles/scss/image-gallery.scss";
 
 function App() {
   return (

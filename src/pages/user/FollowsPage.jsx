@@ -3,13 +3,15 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ShopsContainer from '../../components/Shop/ShopsContainer';
 import { useSelector } from 'react-redux';
+import env from '../../env';
 
 const FollowsPage = () => {
     const auth = useSelector(state => state.auth);
     const [follows, setFollows] = useState([]);
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_ROOT_API}/api/user/${auth._id}/follows`)
+        console.log(auth)
+        axios.get(`${env.API_URL}/user/${auth._id}/follows`)
             .then(res => setFollows(res.data))
             .catch(err => console.log(err));
     }, []);
@@ -19,7 +21,7 @@ const FollowsPage = () => {
                 <h1 style={{fontSize: '35px', marginBottom: '15px'}}>Mis seguidos</h1>
                 <h2>Acá podrás ver las tiendas que tanto te gustaron y guardaste para verlas fácilmente!</h2>
 
-                <ShopsContainer duvis={follows} />
+                <ShopsContainer shops={follows} />
             </main>
     );
 }

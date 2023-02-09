@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import {login} from '../../redux/actions/auth.actions';
 import routes from '../../router/routes';
 import { useNavigate } from 'react-router-dom';
+import logo from '../../images/logo.webp';
 
 const LoginForm = ({setIsRegistering, setIsForgottenPassword}) => {
     const [form, setForm] = useState({});
@@ -71,7 +72,7 @@ const LoginForm = ({setIsRegistering, setIsForgottenPassword}) => {
 
     return (
         <div className='login_container'> 
-            <motion.img src="https://htmlcolorcodes.com/assets/images/colors/gray-color-solid-background-1920x1080.png" alt="Logéate" />
+            <motion.img src={logo} alt="Logéate" />
 
             <form className='login_form'>
                 <motion.div className='form_group'>

@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import styles from './ShopPage.module.scss'
-import ProductsContainer from '../components/Shop/products/ProductsContainer';
+import styles from './MyShop.module.scss'
+import ProductsContainer from '../global/ProductsContainer';
 import { useSelector } from 'react-redux';
 import PostsContainer from '../components/Shop/single/PostsContainer';
-import DuviPresentation from '../components/Shop/single/DuviPresentation';
+import ShopPresentation from '../components/Shop/single/ShopPresentation';
 import CommentsContainer from '../components/Shop/single/CommentsContainer';
 
-export default function ShopPage() {
+export default function MyShop() {
     const [shop, setShop] = useState(false);
     const auth = useSelector(state => state.auth);
     const [theUserIsClient, setTheUserIsClient] = useState(false);
 
     useEffect(() => {
         setShop(auth.shop);
+        console.log(auth.shop)
     }, []);
     
-  return (
+  if(shop) return (
     <>
         <main className={styles.main_container}>
             <h1>
@@ -23,21 +24,19 @@ export default function ShopPage() {
             </h1>
 
             <div className={styles.about}>
-                <h3>About</h3>
-
-                <DuviPresentation shop={shop} />
+                <ShopPresentation shop={shop} />
             </div>
 
             <div className={styles.media}>
-                <PostsContainer owner={shop._id === auth.shop._id} posts={shop.posts}/>
+                <PostsContainer owner={!theUserIsClient} posts={shop.posts}/>
 
                 <h3 style={{margin: '30px 0'}}>Productos</h3>
 
-                <ProductsContainer products={shop.products} owner={shop._id === auth.shop._id}/>
+                <ProductsContainer products={shop.products} width={'32%'} />
 
-                <h3 style={{margin: '30px 0'}}>Comentarios</h3>
+                {/* <h3 style={{margin: '30px 0'}}>Comentarios</h3> */}
 
-                <CommentsContainer theUserIsClient={theUserIsClient} duviId={shop._id} userId={auth._id}/>
+                {/* <CommentsContainer theUserIsClient={theUserIsClient} shopId={shop._id} userId={auth._id}/> */}
             </div>
         </main>
     </>

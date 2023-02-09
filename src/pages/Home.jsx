@@ -24,7 +24,7 @@ const Home = () => {
         <main>
             <CategorySelect categories={categories} error={statusCategories === 'error'} />
             {/* <TradersView /> */}
-            <ProductsContainer products={products} />
+            <ProductsContainer products={products} title={'Vea nuestros productos destacados!'}/>
 
         </main>
     );

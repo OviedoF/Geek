@@ -1,0 +1,27 @@
+.presentation_info{
+    display: flex;
+
+    .text{
+        padding: 70px 20px 10px;
+        position: relative;
+        width: 50%;
+
+        .chips{
+            position: absolute;
+            display: flex;
+            top: 0;
+            right: 0;
+            
+            p{
+                background-color: var(--card-bg);
+                padding: 10px 20px;
+                border-radius: 20px;
+                margin: 0 10px;
+            }
+        }
+
+        .description{
+            margin-top: 30px;
+        }
+    }
+}

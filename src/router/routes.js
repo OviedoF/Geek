@@ -16,10 +16,12 @@ export default {
     wishlist: '/user/wishlist',
     productsFavs: '/favs/products',
     shopsFavs: '/favs/shops',
+    myWallet: '/mywallet',
 
     /* productos */
     products: '/products',
     product: '/product',
+    category: '/category',
 
     /* administrador */
     createCategory: '/admin/category/create',

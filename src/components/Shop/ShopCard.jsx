@@ -4,11 +4,13 @@ import CaracteristicItem from '../../libs/CaracteristicItem'
 import Stars from '../puntation/Stars'
 import styles from './ShopCard.module.scss'
 import { faArchive } from '@fortawesome/free-solid-svg-icons'
+import routes from '../../router/routes'
 
 export default function ShopCard({shop}) {
   return (
     <div className={styles.card}>
-        <img className={styles.bannerImage} src={shop.bannerImage} alt={shop.name} />
+        <img className={styles.bannerImage} src={shop.bannerImage} alt={shop.name + 'portada'} />
+        <img className={styles.profileImage} src={shop.profileImage} alt={shop.name} />
 
         <div className={styles.info_shop}>
           <h2>{shop.name}</h2>
@@ -24,7 +26,7 @@ export default function ShopCard({shop}) {
           </ul>
         </div>
         
-        <Link to={`/duvi/${shop._id}`}>
+        <Link to={`${routes.shop}/${shop._id}`}>
             Ver tienda
         </Link>
     </div>

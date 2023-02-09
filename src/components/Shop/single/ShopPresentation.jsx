@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import styles from './DuviPresentation.module.scss';
+import styles from './ShopPresentation.module.scss';
 import { faVoicemail, faGlobe, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram, faLinkedin, faWhatsapp, faYoutube, faTiktok, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import FollowButton from './FollowButton.jsx';
@@ -19,7 +19,7 @@ const DuviPresentation = ({shop}) => {
 
             <h2>{shop.name}</h2>
 
-            <FollowButton duviId={shop._id}/>
+            <FollowButton shopId={shop._id}/>
 
             <h4>Descripción</h4>
             <p>{shop.description}</p>

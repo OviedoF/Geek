@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import routes from '../../router/routes';
 import './CategorySelect.scss'
 
-const Card = ({category, eskeleton}) => {
+const Card = ({category}) => {
     return (
-      <li className="card">
-        <img src={category.imageUrl || 'https://media.tarkett-image.com/large/TH_24567081_24594081_24596081_24601081_24563081_24565081_24588081_001.jpg' } alt="Background card" className='background_card' />
-        <h2>{category.name}</h2>
-        <p>{category.description}</p>
-      </li>
+      <Link to={`${routes.products}/${category.name}/1`}>
+        <li className="card">
+          <img src={category.imageUrl || 'https://media.tarkett-image.com/large/TH_24567081_24594081_24596081_24601081_24563081_24565081_24588081_001.jpg' } alt="Background card" className='background_card' />
+          <h2>{category.name}</h2>
+          <p>{category.description}</p>
+        </li>
+      </Link>
     )
-  }
+}
 
 const CardSkeleton = ({category, eskeleton}) => {
   return (
