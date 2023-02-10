@@ -21,6 +21,7 @@ export default {
     /* productos */
     products: '/products',
     product: '/product',
+    productEdit: '/product/edit',
     category: '/category',
 
     /* administrador */

@@ -3,7 +3,7 @@ import EditCategoryModal from './modals/EditCategoryModal'
 
 function CategoryCard({category, setIsEditing}) {
     return (
-        <div className="category_card edit_card">
+        <div className="category_card item_card">
             <h3>{category.name}</h3>
             
             <button className='edit_button' onClick={(e => setIsEditing(category))}>
@@ -14,13 +14,13 @@ function CategoryCard({category, setIsEditing}) {
 }
 
 export default function RenderCategoriesToEdit({categories}) {
-    const [isEditing, setIsEditing] = useState(true)
+    const [isEditing, setIsEditing] = useState(false)
 
   return (
     <>
-        <h2>Categorías</h2>
+        <h2 style={{marginTop: 0}}>Categorías</h2>
 
-        {isEditing && <EditCategoryModal category={isEditing} />}
+        {isEditing && <EditCategoryModal setIsEditing={setIsEditing} data={isEditing} />}
 
         <div className="items_container categories_container">
             {categories.map(category => (

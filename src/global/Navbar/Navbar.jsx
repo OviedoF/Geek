@@ -20,6 +20,7 @@ import redirectsList from "./redirectsList";
 import Notifications from "./Notifications";
 import routes from '../../router/routes';
 import { useNavigate } from 'react-router-dom';
+import rupiasImage from '../../images/rupia.png'
 
 const Navbar = () => {
     const [isAdmin, setIsAdmin] = useState(false);
@@ -32,6 +33,7 @@ const Navbar = () => {
         dispatch(logout());
         navigate(routes.auth);
     };
+    console.log(auth)
 
     useEffect(() => {
         if(!auth) {
@@ -48,12 +50,15 @@ const Navbar = () => {
                     <img src={auth.userImage} alt="user" />
                     <p>@{auth.username}</p>
 
-                    <div className={styles.icons_actions}>
-                    <FontAwesomeIcon icon={faQuestion} />
+                    {/* <div className={styles.icons_actions}>
+                    <FontAwesomeIcon icon={faQuestion} /> */}
                     {/* <Notifications /> */}
-                    </div>
+                    {/* </div> */}
                 </div>
-                {auth.shop && <Link to={'/mywallet'} id={styles.wallet}>Wallet: ${auth.wallet.onProperty}  <span>${auth.wallet.onWait} </span></Link>}
+                {auth.shop && <Link to={'/mywallet'} id={styles.wallet} style={{display: 'flex', alignItems: 'center'}}>
+                    <img src={rupiasImage} alt="rupias" className='rupia_image' style={{height: 20, width: 15}} />    
+                    <p style={{fontSize: 20, marginLeft: 5}}>{auth.wallet.balance}</p>
+                </Link>}
 
                 <ul>
                     <li className={styles.no_modal}>

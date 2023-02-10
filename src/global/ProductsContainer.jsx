@@ -1,7 +1,7 @@
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faPencil } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import routes from '../router/routes';
 import './ProductsContainer.scss';
 
@@ -11,10 +11,14 @@ const formatNumbers = (number) => {
     return number.toString().replace(exp,rep);
 }
 
-const ProductCard = ({product, width}) => {
+const ProductCard = ({product, width, owner}) => {
+    const navigate = useNavigate();
+
     return (
         <div className="product_card" style={width ? {width} : {}}>
             <img src={product.principalImage} alt={product.name} />
+            
+            {owner && <FontAwesomeIcon onClick={() => navigate(`${routes.productEdit}/${product._id}`)} className='pencil_icon' icon={faPencil} />}
 
             <div className="info">
                 <h3 className='product_name'>{product.name}</h3>
@@ -28,14 +32,14 @@ const ProductCard = ({product, width}) => {
     )
 }
 
-const ProductsContainer = ({products, title, width}) => {
+const ProductsContainer = ({products, title, width, owner}) => {
     return (
         <>
             {title && <h2 className='separation-top'>{title}</h2>}
 
             <section className='products_container'>
                 {products.map(product => (
-                    <ProductCard product={product} key={product._id} width={width}/>
+                    <ProductCard product={product} key={product._id} width={width} owner={owner}/>
                 ))}
             </section>
         </>

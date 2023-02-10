@@ -28,6 +28,7 @@ import { login } from '../redux/actions/auth.actions';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import EditPage from '../pages/admin/EditPage';
+import EditProduct from '../pages/Shop/EditProduct';
 
 const AppRouter = () => {
     const [logged, setLogged] = useState(false);
@@ -92,6 +93,7 @@ const AppRouter = () => {
                     <Route exact path={routes.products} element={<ViewProducts />} />
                     <Route exact path={`${routes.product}/:id`} element={<ProductPage />} />
                     <Route exact path={`${routes.products}/:category/:page`} element={<ProductsByCategory />} />
+                    <Route exact path={`${routes.productEdit}/:id`} element={<EditProduct />} />
 
                     {/* rutas administrador */}
                     <Route exact path={routes.createCategory} element={

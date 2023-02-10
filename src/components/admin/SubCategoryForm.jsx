@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const SubCategoryForm = ({data, buttonText, action, form, setForm, categories}) => {
     const [principalImage, setPrincipalImage] = useState();
-    const [backgroundImage, setBackgroundImage] = useState(!data || !form.fakeImage ? '' : data && data.principalImage || form.fakeImage);
+    const [backgroundImage, setBackgroundImage] = useState(data ? data.imageUrl : form.fakeImage);
 
     const handleChanges = (e) => {
         setForm({
@@ -19,8 +19,8 @@ const SubCategoryForm = ({data, buttonText, action, form, setForm, categories}) 
 
             <div className="form-group required">
                 <select onChange={(e) => handleChanges(e)} name='category' placeholder="Seleccione categoría a la que pertenece" defaultValue={data && data.category}>
-                    {data && data.category ? <option>{data.category}</option> : <option value={undefined}>Selecciona una categoría</option>}
-
+                    {data && data.category ? <option value={data.category._id}>{data.category.name}</option> : <option value={undefined}>Selecciona una categoría</option>}
+ 
                     {categories.map(el => (
                         <option value={el._id}>{el.name}</option>
                     ))}

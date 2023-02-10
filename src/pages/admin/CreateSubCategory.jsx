@@ -57,7 +57,7 @@ const CreateSubCategory = () => {
         default:
             if(postStatus.status === 'loading') return <LoadingPage />
 
-            return (
+            if(data) return (
                 <main>
                     <h1>Crear subcategoría</h1>
         

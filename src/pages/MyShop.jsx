@@ -32,7 +32,7 @@ export default function MyShop() {
 
                 <h3 style={{margin: '30px 0'}}>Productos</h3>
 
-                <ProductsContainer products={shop.products} width={'32%'} />
+                <ProductsContainer products={shop.products} owner={!theUserIsClient} width={'32%'} />
 
                 {/* <h3 style={{margin: '30px 0'}}>Comentarios</h3> */}
 

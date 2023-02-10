@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState, useEffect } from 'react';
 
 const ProductForm = ({ data, buttonText, action, categories, form, setForm }) => {
-    const [principalImage, setPrincipalImage] = useState(!data || !form.fakeImage ? '' : data && data.principalImage || form.fakeImage);
+    const [principalImage, setPrincipalImage] = useState(data ? data.principalImage : form.fakeImage);
     const [galleryImages, setGalleryImages] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState({subCategories: []});
 
@@ -36,7 +36,7 @@ const ProductForm = ({ data, buttonText, action, categories, form, setForm }) =>
     }
 
     useEffect(() => {
-        if(form.category) {
+        if(form.category && typeof form.category !== 'object') {
             setSelectedCategory(categories.find(el => el._id === form.category))
         }
     }, [form]);
@@ -64,7 +64,7 @@ const ProductForm = ({ data, buttonText, action, categories, form, setForm }) =>
 
             <div className="form-group required">
                 <select onChange={(e) => handleChanges(e)} name='subCategory' placeholder="Seleccione subcategoría">
-                    {data && data.subcategory ? <option>{data && data.subcategory}</option> : <option>Selecciona una sub-categoría</option>}
+                    {data && data.subCategory ? <option>{data && data.subCategory}</option> : <option>Selecciona una sub-categoría</option>}
 
                     {selectedCategory.subCategories.map(el => (
                         <option value={el._id}>{el.name}</option>
@@ -83,7 +83,7 @@ const ProductForm = ({ data, buttonText, action, categories, form, setForm }) =>
             </div>
 
             <div className="form-group full">
-                <textarea name='description' onChange={(e) => handleChanges(e)} placeholder='Descripción de su producto' defaultValue={data && data.description}/>
+                <textarea name='description' onChange={(e) => handleChanges(e)} placeholder='Descripción de su producto' defaultValue={data && data.description !== "undefined" ? data.description : ''}/>
             </div>
 
             <div className="form-group required" style={{background: `url(${principalImage}) center/cover no-repeat`}}>

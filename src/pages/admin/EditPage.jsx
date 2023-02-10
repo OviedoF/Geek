@@ -5,6 +5,7 @@ import { useQuery } from 'react-query';
 import LoadingPage from '../../global/LoadingPage';
 import ErrorPage from '../../global/ErrorPage';
 import RenderCategoriesToEdit from '../../components/admin/EditComponentsPage/RenderCategoriesToEdit';
+import RenderSubCategoriesToEdit from '../../components/admin/EditComponentsPage/RenderSubCategoriesToEdit';
 import './EditPage.scss';
 
 export default function EditPage() {
@@ -27,6 +28,8 @@ export default function EditPage() {
             <h1>Editar componentes</h1>
 
             <RenderCategoriesToEdit categories={categories}/>
+
+            <RenderSubCategoriesToEdit subCategories={subCategories} categories={categories} />
         </main>
     )
 }
