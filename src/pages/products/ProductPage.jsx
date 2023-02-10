@@ -19,7 +19,7 @@ const ProductPage = () => {
 
     if(status === 'loading') return <LoadingPage />
 
-    if (status === 'error') return <NotFoundItem />
+    if (status === 'error') return <NotFoundItem title={'¡Ups! Parece que este producto no existe'} subtitle={'No te preocupes, te llevaremos al inicio 😊'} />
 
     if (status === 'success' && product) return (
         <main>

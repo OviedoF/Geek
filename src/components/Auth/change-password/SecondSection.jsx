@@ -3,6 +3,7 @@ import styles from './ChangePasswordSection.module.scss';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { activeScreen, resetAllScreens } from '../../../redux/actions/screensActive.actions';
+import env from '../../../env'
 
 const SecondSection = ({textInput, setStatus, email}) => {
     const form = {
@@ -25,7 +26,7 @@ const SecondSection = ({textInput, setStatus, email}) => {
             code.push(element);
         }
 
-        axios.post(`${process.env.REACT_APP_ROOT_API}/api/change-password/verifyCode`, {email: email, code: code.join('')})
+        axios.post(`${env.API_URL}/changePassword/verifyCode`, {email: email, code: code.join('')})
             .then(res => {
                 setStatus(2);
             })

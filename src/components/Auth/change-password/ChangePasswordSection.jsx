@@ -4,6 +4,7 @@ import axios from "axios";
 import FirstSection from "./FirstSection";
 import SecondSection from "./SecondSection";
 import ThirdSection from "./ThirdSection";
+import { HashLoader } from "react-spinners";
 
 export default function ChangePasswordSection({
   img,
@@ -18,11 +19,11 @@ export default function ChangePasswordSection({
   setUserId,
   userId
 }) {
-
+  const [postStatus, setPostStatus] = useState({status: 'idle'});
 
   return (
     <div className={styles.container}>
-      <img src={img || userImage} alt={text} />
+      <img src={img || userImage} alt={text} style={numberStatus === 0 ? {objectFit: 'contain', borderRadius: 0} : {}} />
 
       <h3>{text}</h3>
       {subtext && <p>{subtext}</p>}
@@ -30,6 +31,8 @@ export default function ChangePasswordSection({
       <form action="">
         {numberStatus === 0 && (
           <FirstSection
+            postStatus={postStatus}
+            setPostStatus={setPostStatus}
             email={email}
             setUserImage={setUserImage}
             setStatus={setStatus}

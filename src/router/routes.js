@@ -26,5 +26,6 @@ export default {
     /* administrador */
     createCategory: '/admin/category/create',
     createSubcategory: '/admin/subcategories/create',
-    messages: '/messages'
+    messages: '/messages',
+    editComponentsPage: '/admin/edit-components'
 }

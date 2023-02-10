@@ -3,11 +3,11 @@ import styles from './ChangePassword.module.scss';
 import ChangePasswordSection from './ChangePasswordSection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
-// import logo from '../../../images/logo.png';
+import logo from '../../../images/logo.webp';
 
 export default function ChangePassword({setIsModal}) {
   const [status, setStatus] = useState(0);
-  const [userImage, setUserImage] = useState(null);
+  const [userImage, setUserImage] = useState(logo);
   const [email, setEmail] = useState('');
   const [userId, setUserId] = useState(null);
 
@@ -19,7 +19,7 @@ export default function ChangePassword({setIsModal}) {
 
         <div className={styles.slider} style={{left: `-${status}00%`}}>
           <ChangePasswordSection 
-            userImage={'https://htmlcolorcodes.com/assets/images/colors/gray-color-solid-background-1920x1080.png'} 
+            userImage={userImage} 
             text={"¿Perdiste tu contraseña?"}
             numberStatus={0}
             setStatus={setStatus}

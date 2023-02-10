@@ -25,7 +25,8 @@ export default function redirectsList(dataToGet, id, myDuviId) {
     admin: [
       ["Crear categoría", routes.createCategory],
       ["Crear subcategoría", routes.createSubcategory],
-      ["Mensajes y consultas", routes.messages]
+      ["Mensajes y consultas", routes.messages],
+      ["Editar componentes", routes.editComponentsPage]
     ],
   };
 

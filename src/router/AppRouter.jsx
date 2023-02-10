@@ -27,6 +27,7 @@ import env from '../env';
 import { login } from '../redux/actions/auth.actions';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
+import EditPage from '../pages/admin/EditPage';
 
 const AppRouter = () => {
     const [logged, setLogged] = useState(false);
@@ -96,6 +97,12 @@ const AppRouter = () => {
                     <Route exact path={routes.createCategory} element={
                         <AdminRoute>
                             <CreateCategory />
+                        </AdminRoute>
+                    } />
+
+                    <Route exact path={routes.editComponentsPage} element={
+                        <AdminRoute>
+                            <EditPage />
                         </AdminRoute>
                     } />
 
