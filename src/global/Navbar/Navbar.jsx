@@ -34,6 +34,10 @@ const Navbar = () => {
     };
 
     useEffect(() => {
+        if(!auth) {
+            navigate(routes.auth)
+            window.location.reload();
+        }
         setIsAdmin(auth.roles.includes('admin'))
     }, []);
 

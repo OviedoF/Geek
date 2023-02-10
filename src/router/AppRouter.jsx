@@ -59,6 +59,8 @@ const AppRouter = () => {
 
         if(token) {
             getUserInfo(token);
+        } else {
+            setFinished(true)
         }
     }, []);
 
