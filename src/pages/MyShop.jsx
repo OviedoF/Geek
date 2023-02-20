@@ -13,7 +13,6 @@ export default function MyShop() {
 
     useEffect(() => {
         setShop(auth.shop);
-        console.log(auth.shop)
     }, []);
     
   if(shop) return (

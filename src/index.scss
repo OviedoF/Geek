@@ -148,6 +148,22 @@ main{
   &#not_padding{
     padding: 0;
   }
+
+  @media only screen and (max-width: 1200px){
+      padding-left: 30%;
+  }
+  
+  @media only screen and (max-width: 1000px){
+      padding-left: 35%;
+  }
+
+  @media only screen and (max-width: 800px){
+    padding: 100px 50px;
+  }
+
+  @media only screen and (max-width: 600px){
+    padding: 100px 20px;
+  }
 }
 
 .btn{
@@ -203,4 +219,12 @@ a{
 img.rupia_image{
   width: 20px;
   height: 30px;
+}
+
+label.required{
+  &:after{
+    content: "*";
+    color: var(--color-danger);
+    margin-left: 5px;
+  }
 }

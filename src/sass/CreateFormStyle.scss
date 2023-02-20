@@ -101,3 +101,11 @@
     }
     
 }
+
+@media screen and (max-width: 1000px){
+    .form_container.first_design{
+        .form-group{
+            width: 100%;
+        }
+    }
+}

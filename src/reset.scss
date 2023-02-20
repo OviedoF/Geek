@@ -56,3 +56,14 @@ h1, h2{
 		margin-top: 25px;
 	}
 }
+
+@media screen and (max-width: 800px){
+	h1, h2{
+		font-size: 25px;
+		padding: 0 10px;
+	}
+
+	.disclaimer{
+		font-size: 12px;
+	}
+}

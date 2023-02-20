@@ -1,5 +1,5 @@
 import React from 'react';
-import RequestShopForm from '../components/Shop/Edit/EditShopForm';
+import RequestShopForm from '../components/Shop/Request/RequestShopForm';
 
 const RequestShop = () => {
     return (

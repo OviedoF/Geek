@@ -4,7 +4,7 @@ import styles from './DropdownNav.module.scss'
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 
-export default function DropdownNav({icon, text, arrayData}) {
+export default function DropdownNav({icon, text, arrayData, action}) {
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -17,7 +17,7 @@ export default function DropdownNav({icon, text, arrayData}) {
         </div>
 
         {isActive && arrayData && <div className={styles.modal}>
-          {arrayData.map(el => <Link key={el[1]} to={el[1]}> {el[0]} </Link>)}
+          {arrayData.map(el => <Link key={el[1]} to={el[1]} onClick={action && action}> {el[0]} </Link>)}
         </div>}
         
     </li>
