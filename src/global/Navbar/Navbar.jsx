@@ -35,7 +35,6 @@ const Navbar = () => {
         dispatch(logout());
         navigate(routes.auth);
     };
-    console.log(auth)
 
     useEffect(() => {
         if (!auth) {
@@ -51,16 +50,11 @@ const Navbar = () => {
                 <div className={styles.user_data}>
                     <img src={auth.userImage} alt="user" />
                     <p>@{auth.username}</p>
-
-                    {/* <div className={styles.icons_actions}>
-                    <FontAwesomeIcon icon={faQuestion} /> */}
-                    {/* <Notifications /> */}
-                    {/* </div> */}
                 </div>
-                {auth.shop && <Link to={'/mywallet'} id={styles.wallet} style={{ display: 'flex', alignItems: 'center' }}>
+                <Link to={'/mywallet'} id={styles.wallet} style={{ display: 'flex', alignItems: 'center' }}>
                     <img src={rupiasImage} alt="rupias" className='rupia_image' style={{ height: 20, width: 15 }} />
-                    <p style={{ fontSize: 20, marginLeft: 5 }}>{auth.wallet.balance}</p>
-                </Link>}
+                    <p style={{ fontSize: 20, marginLeft: 5, display: 'flex' }}>{auth.wallet.balance}  <span style={{fontSize: 12}}>{auth.wallet.pending && auth.wallet.pending}</span></p>
+                </Link>
 
                 <ul>
                     <li className={styles.no_modal}>

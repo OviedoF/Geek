@@ -5,6 +5,7 @@ export default function redirectsList(dataToGet, id, myDuviId) {
     home: routes.home,
     user: [
       ["Perfil", routes.user],
+      ["Mis compras", routes.purchases],	
       ["Mis seguidos", routes.follows],
       ["Lista de deseados", routes.wishlist],
     ],

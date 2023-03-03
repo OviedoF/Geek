@@ -17,6 +17,11 @@ export default {
     productsFavs: '/favs/products',
     shopsFavs: '/favs/shops',
     myWallet: '/mywallet',
+    confirm: '/confirm/:id',
+    confirmPath: '/confirm',
+    paymentPurchase: '/payment-purchase/:id',
+    paymentPurchasePath: '/payment-purchase',
+    purchases: '/purchases',
 
     /* productos */
     products: '/products',

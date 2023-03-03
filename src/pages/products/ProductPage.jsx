@@ -21,11 +21,16 @@ const ProductPage = () => {
 
     if (status === 'error') return <NotFoundItem title={'¡Ups! Parece que este producto no existe'} subtitle={'No te preocupes, te llevaremos al inicio 😊'} />
 
-    if (status === 'success' && product) return (
+    if (status === 'success' && product && product.galleryImages) return (
         <main>
             <ProductPresentation auth={auth} product={product} images={[product.principalImage, ...product.galleryImages]} />
 
-            <Proposals auth={auth} owner={auth.shop ? product.shop._id === auth.shop._id : false} product={product}/>
+            {!product.inProcess && <Proposals auth={auth} owner={auth.shop ? product.shop._id === auth.shop._id : false} product={product}/>}
+
+            {product.inProcess && <div className="product__in_process" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: 50}}>
+                <h2 className="product__in_process__title">¡Este producto está en proceso!</h2>
+                <p className="product__in_process__subtitle">Este producto está en proceso de intercambio o compra :), ¡visite las demás publicaciones!.</p>
+            </div>}
         </main>
     );
 }

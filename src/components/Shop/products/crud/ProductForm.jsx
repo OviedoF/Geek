@@ -64,7 +64,7 @@ const ProductForm = ({ data, buttonText, action, categories, form, setForm }) =>
 
             <div className="form-group required">
                 <select onChange={(e) => handleChanges(e)} name='subCategory' placeholder="Seleccione subcategoría">
-                    {data && data.subCategory ? <option>{data && data.subCategory}</option> : <option>Selecciona una sub-categoría</option>}
+                    {data && data.subCategory ? <option value={data && data.subCategory && data.subCategory._id}>{data && data.subCategory.name}</option> : <option value={null}>Selecciona una sub-categoría</option>}
 
                     {selectedCategory.subCategories.map(el => (
                         <option value={el._id}>{el.name}</option>

@@ -29,6 +29,9 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import EditPage from '../pages/admin/EditPage';
 import EditProduct from '../pages/Shop/EditProduct';
+import ConfirmPage from '../pages/ConfirmPage';
+import PaymentPurchase from '../pages/PaymentPurchase';
+import Purchases from '../pages/user/Purchases';
 
 const AppRouter = () => {
     const [logged, setLogged] = useState(false);
@@ -88,6 +91,9 @@ const AppRouter = () => {
                     <Route exact path = {routes.wishlist}  element = {<WishListPage />} />
                     <Route exact path={routes.productsFavs} element={<FavsProducts />} />
                     <Route exact path={routes.myWallet} element={<Wallet />} />
+                    <Route exact path={routes.confirm} element={<ConfirmPage />} />
+                    <Route exact path={`${routes.paymentPurchase}`} element={<PaymentPurchase />} />
+                    <Route exact path={`${routes.purchases}`} element={<Purchases />} />
 
                     {/* rutas de productos */}
                     <Route exact path={routes.products} element={<ViewProducts />} />

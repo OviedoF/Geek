@@ -59,8 +59,9 @@ const ProductPresentation = ({product, images, auth}) => {
                     <p className='description'>{product.description !== 'undefined' ? product.description : 'El comprador no adjuntó descripción.'}</p>
                     
                     <div className="chips">
-                        {product.salable && <p>Se vende: ${formatNumbers(product.price)}</p>}
-                        {product.tradable && <p>Es intercambiable</p>}
+                        {!product.inProcess && product.salable && <p>Se vende: ${formatNumbers(product.price)}</p>}
+                        {!product.inProcess && product.tradable && <p>Es intercambiable</p>}
+                        {product.inProcess && <p>En proceso</p>}
                         {!owner && <p style={{cursor: 'pointer'}} onClick={() => handleWishlist()}>
                             {isInWishlist ? 'Quitar' : 'Agregar'} a Deseados
                         </p>}

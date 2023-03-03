@@ -1,11 +1,11 @@
 import React from 'react';
-import { faImage, faMessage, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faImage } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './ProposalCard.scss';
 import rupiaImage from '../../../images/rupia.png';
 import formatPrice from '../../../libs/FormPrice.js';
 
-const ProposalCard = ({proposal, setActiveProposalImages}) => {
+const ProposalCard = ({setConfirmModal, proposal, owner, setActiveProposalImages}) => {
     if(proposal.images[0]) return (
         <div className="proposal_card">
            {proposal.images[0] && <img src={proposal.images[0]} className={'product_image'} alt='propuesta' />}
@@ -25,7 +25,7 @@ const ProposalCard = ({proposal, setActiveProposalImages}) => {
 
                <div className="buttons">
                    {proposal.images[0] && <button onClick={() => setActiveProposalImages(proposal.images)}><FontAwesomeIcon icon={faImage} /> Ver imágenes</button>}
-                   <button><FontAwesomeIcon icon={faMessage} /> Iniciar chat!</button>
+                   {owner && <button onClick={(e) => setConfirmModal(proposal)}><FontAwesomeIcon icon={faCheck} /> ¡Aceptar!</button>}
                </div>
            </div>
        </div>
@@ -48,7 +48,7 @@ const ProposalCard = ({proposal, setActiveProposalImages}) => {
 
                 <div className="buttons">
                     {proposal.images[0] && <button onClick={() => setActiveProposalImages(proposal.images)}><FontAwesomeIcon icon={faImage} /> Ver imágenes</button>}
-                    <button><FontAwesomeIcon icon={faMessage} /> Iniciar chat!</button>
+                    {owner && <button><FontAwesomeIcon icon={faCheck} onClick={(e) => setConfirmModal(true)}/> ¡Aceptar!</button>}
                 </div>
             </div>
         </div>

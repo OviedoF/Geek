@@ -51,9 +51,10 @@ const RequestShopForm = ({shop}) => {
         const formData = new FormData();
         formData.append('profileImage', shopImage);
         formData.append('bannerImage', coverImage);
+        console.log(form)
         formData.append('form', JSON.stringify(form));
 
-        if(!shopImage || !coverImage || !form.name || !form.description || !form.region || !form.city || !form.direction || !form.cellPhone || !form.email) {
+        if(!shopImage || !coverImage || !form.name || !form.description || !form.comunne || !form.region || !form.direction || !form.cellPhone || !form.email) {
             return setStatus({
                 status: 'error',
                 message: 'Por favor, completa todos los campos obligatorios.'

@@ -1,0 +1,72 @@
+#confirm_modal{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .confirm_modal__close{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        font-size: 30px;
+        color: #FFFFFF;
+    }
+
+    .confirm_modal__content{
+        background-color: var(--card-bg);
+        width: 60%;
+        padding: 30px 50px;
+        border-radius: 10px;
+
+        .confirm_modal__title{
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        p{
+            font-size: 16px;
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .confirm_modal__buttons{
+            display: flex;
+            justify-content: flex-end;
+
+            button{
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                margin-left: 10px;
+                color: white;
+                transition: all 0.3s ease;
+
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+
+            .confirm_modal__button--cancel{
+                background-color: var(--color-danger);
+            }
+
+            .confirm_modal__button--confirm{
+                background-color: var(--color-success);
+            }
+        }
+    }
+
+    
+}

@@ -5,11 +5,13 @@ import './Proposals.scss'
 import CreatingProposalModal from './CreatingProposalModal.jsx'
 import ProposalImagesModal from './ProposalImagesModal';
 import ProposalCard from './ProposalCard';
+import ConfirmProposalModal from './ConfirmProposalModal';
 
 const Proposals = ({owner, product, auth}) => {
     const [isCreating, setIsCreating] = useState(false);
     const [activeProposalImages, setActiveProposalImages] = useState(false);
     const [haveProposal, setHaveProposal] = useState(false);
+    const [confirmModal, setConfirmModal] = useState(false);
 
     useEffect(() => {
         product.proposals.forEach(proposal => {
@@ -25,6 +27,7 @@ const Proposals = ({owner, product, auth}) => {
 
             {activeProposalImages && <ProposalImagesModal setActiveProposalImages={setActiveProposalImages} images={activeProposalImages} />}
             {isCreating && <CreatingProposalModal setHaveProposal={setHaveProposal} productId={product._id} setIsCreating={setIsCreating} />}
+            {confirmModal && <ConfirmProposalModal setConfirmModal={setConfirmModal} product={product} proposal={confirmModal}  />}
             
             {!owner && !haveProposal && <div onClick={() => setIsCreating(true)} className="create_proposal_button">
                 <FontAwesomeIcon icon={faPlus} />
@@ -38,7 +41,7 @@ const Proposals = ({owner, product, auth}) => {
 
             <div className='proposals_container'>
                 {product.proposals.map(proposal => (
-                    <ProposalCard key={proposal._id} proposal={proposal} setActiveProposalImages={setActiveProposalImages} />
+                    <ProposalCard owner={owner} setConfirmModal={setConfirmModal} key={proposal._id} proposal={proposal} setActiveProposalImages={setActiveProposalImages} />
                 ))}
             </div>
 

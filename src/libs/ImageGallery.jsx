@@ -164,7 +164,7 @@ export default class ImageGallery extends React.Component {
     ));
     const ImgItem = (
       <div className="gallery-img-container">
-        <img className="gallery-img" src={this.images[i]} />
+        <img className="gallery-img" src={this.images[i]} style={{objectFit: 'contain'}} />
         <button className="prev-carousel-button" onClick={this.prevHandler}>
           &#9664;
         </button>
@@ -204,6 +204,7 @@ export default class ImageGallery extends React.Component {
         key={n}
         id={imgId++}
         onClick={this.updateImage}
+        style={{objectFit: 'contain'}}
       />
     ));
 
